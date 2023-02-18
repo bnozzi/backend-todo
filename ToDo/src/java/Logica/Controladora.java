@@ -19,5 +19,14 @@ public class Controladora {
         
     }
     //rest of crud methods 
+    public void eliminarTarea(int id){
+        controlPersis.delete(id);
+    }
+    public void actualizarTarea(Tarea tarea){
+       controlPersis.update(tarea);
+    }
+    public Tarea ObtenerPorId(int id){
+        return controlPersis.GetById(id);
+    }
     
 }

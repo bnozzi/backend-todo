@@ -10,18 +10,24 @@
 <!DOCTYPE html>
 <html>
     <head>
+       
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        
+        
     </head>
-    <body>
+    <body  >
         <p> Add task</p>
+        <!--     post from -->
+        
          <form action="SVtodo" method="post">
             <input type="text" name="task">
             <input type="submit" value="guardar" />
         </form>
        <br>
        <label> List of To Do </label>
-       
+       <!--    get from -->
+
        <form action="SVtodo" method="get">
           <input type="submit" value="get tasks" />
        </form>
@@ -40,6 +46,13 @@
         <ul>
             <li>
                 <%= task.getTarea() %>
+                
+                <form action="SVtodo" onsubmit="DeleteTask('<%= task.getId()%>');">
+                    <input type="submit" value="Delete" />
+                </form>
+                <form action="SvUpdateTask" onsubmit="UpdateTask('<%= task.getId()%>');">
+                    <input type="submit" value="Update" />
+                </form>
             </li>
 
         </ul>
@@ -50,5 +63,22 @@
         }//endif
             
         %>
+        
+        
+        
+        
+        <script>
+            
+            function DeleteTask(task){
+                fetch("SVtodo", {method: 'DELETE', body: task  });
+                   
+            
+            }
+            
+            function UpdateTask(task){
+                fetch("SvUpdateTask", {method: 'PUT', body: task  });
+            }
+            
+        </script>
     </body>
 </html>

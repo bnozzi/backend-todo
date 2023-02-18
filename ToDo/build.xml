@@ -7,9 +7,11 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="ToDo" default="default" basedir=".">
+<project name="ToDo" default="default" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
     <description>Builds, tests, and runs the project ToDo.</description>
     <import file="nbproject/build-impl.xml"/>
+    
+
     <!--
 
     There exist several targets which are by default empty and which can be 
@@ -68,4 +70,17 @@
     nbproject/build-impl.xml file. 
 
     -->
+    <taskdef resource="org/apache/ivy/ant/antlib.xml">
+  <classpath>
+    <pathelement location="lib/ivy.jar"/>
+  </classpath>
+</taskdef>
+
+<target name="resolve" description="retrieve dependencies with ivy">
+  <ivy:retrieve/>
+</target>
+
+
+
+
 </project>

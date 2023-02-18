@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<ivy-module version="2.0">
+    <info organisation="com.example" module="myproject" />
+    <dependencies>
+        <dependency org="com.google.firebase" name="firebase-admin" rev="9.1.1"/>
+        <!-- Otras dependencias aquí -->
+    </dependencies>
+</ivy-module>
+
+
+
+
+<root>
+    
+</root>
+

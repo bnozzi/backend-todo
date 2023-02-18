@@ -52,6 +52,11 @@ public class Tarea implements Serializable {
         return "Tarea{" + "id=" + id + ", tarea=" + tarea + '}';
     }
     
+    public String toJson(){
+        return ("{ \"id\" : "+id+", \"tarea\":  \""+tarea+"\" }");
+        
+    }
+    
     
 
     public void setTarea(String tarea) {
